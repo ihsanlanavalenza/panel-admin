@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style TargetType="Label">
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#007AFF" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="PlaceholderColor" Value="Gray" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="Medium" />
+    </Style>
+
+    <Style TargetType="ListView">
+        <Setter Property="SeparatorVisibility" Value="Default" />
+        <Setter Property="BackgroundColor" Value="White" />
+    </Style>
+
+</ResourceDictionary>

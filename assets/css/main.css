@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+body {
+  background-color: #0b1220;
+  color: white;
+}
+
+.glass {
+  background: rgba(11, 18, 32, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.login-card {
+  background: rgba(11, 18, 32, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2rem;
+  max-width: 28rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.admin-bg {
+  background-color: #0b3954;
+  min-height: 100vh;
+}

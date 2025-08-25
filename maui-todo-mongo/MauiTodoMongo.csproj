@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-ios;net6.0-android;net6.0-windows</TargetFramework>
+    <RootNamespace>MauiTodoMongo</RootNamespace>
+    <AssemblyName>MauiTodoMongo</AssemblyName>
+    <ApplicationTitle>Maui Todo Mongo</ApplicationTitle>
+    <ApplicationId>com.companyname.mauitodomongo</ApplicationId>
+    <UseMaui>true</UseMaui>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.14.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\TodoItem.csproj" />
+    <ProjectReference Include="..\Services\MongoDbService.csproj" />
+    <ProjectReference Include="..\Repositories\TodoRepository.csproj" />
+    <ProjectReference Include="..\ViewModels\MainViewModel.csproj" />
+    <ProjectReference Include="..\Views\MainPage.xaml.csproj" />
+  </ItemGroup>
+
+</Project>
