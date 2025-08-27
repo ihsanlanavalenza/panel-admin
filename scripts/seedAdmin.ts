@@ -20,8 +20,8 @@ async function main() {
       role: 'SUPER_ADMIN',
       status: 'ACTIVE',
     },
-    { new: true, upsert: true }
-  )
+    { new: true, upsert: true, runValidators: true }
+  ).lean()
 
   const atc = await User.findOneAndUpdate(
     { username: 'atc1' },
@@ -33,10 +33,10 @@ async function main() {
       role: 'ATC',
       status: 'ACTIVE',
     },
-    { new: true, upsert: true }
-  )
+    { new: true, upsert: true, runValidators: true }
+  ).lean()
 
-  console.log('Seeded users:', { superAdmin: superAdmin?.toObject?.() ?? superAdmin, atc: atc?.toObject?.() ?? atc })
+  console.log('Seeded users:', { superAdmin, atc })
   await mongoose.disconnect()
 }
 

@@ -1,23 +1,21 @@
 <template>
-  <!-- Adjusted top padding after removing layout's own top padding (was too tall) -->
-  <!-- Further reduced top padding for less empty space at top -->
-  <section class="px-4 pt-2 md:pt-4 lg:pt-4 xl:pt-6">
-    <div class="max-w-7xl mx-auto">
-  <header class="mb-8">
+  <section class="pt-16 md:pt-20 lg:pt-24 xl:pt-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <header class="mb-14">
         <!-- Top meta / breadcrumb (optional) -->
         <nav class="text-xs font-medium text-gray-400 flex items-center gap-2 mb-4">
           <span>Admin</span>
           <span class="opacity-40">/</span>
           <span class="text-gray-300">Users</span>
         </nav>
-        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
+        <div class="flex flex-col gap-6 md:flex-row md:items-end">
+          <div class="w-full">
             <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-white">Users Management</h1>
             <p class="mt-3 text-gray-300 text-sm md:text-[15px] leading-relaxed max-w-2xl">
               Create, update and control user accounts. Assign roles, manage status (active / locked) and keep the system secure.
             </p>
           </div>
-          <div class="flex items-center gap-3 md:pb-1">
+          <div class="flex items-center gap-3 md:pb-1 md:ml-auto">
             <button class="btn btn-primary btn-elev" @click="openCreate()" title="Create new user">
               <span class="icon">➕</span>
               <span class="label">New User</span>

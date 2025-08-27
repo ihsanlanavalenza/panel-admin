@@ -1,11 +1,11 @@
 // server/models/User.ts
-import mongoose, { Schema, model } from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 
 export type Role = 'SUPER_ADMIN' | 'ADMIN' | 'ATC'
-export type Status = 'ACTIVE' | 'SUSPENDED'
+// Extend status to include 'LOCKED' to match client usage; keep 'SUSPENDED' if referenced elsewhere
+export type Status = 'ACTIVE' | 'LOCKED' | 'SUSPENDED'
 
-export interface IUser {
-  _id: mongoose.Types.ObjectId
+export interface IUser extends mongoose.Document {
   username: string
   email: string
   passwordHash: string
@@ -25,10 +25,12 @@ const UserSchema = new Schema<IUser>({
   passwordHash: { type: String, required: true },
   fullName: { type: String, required: true },
   role: { type: String, enum: ['SUPER_ADMIN', 'ADMIN', 'ATC'], default: 'ATC' },
-  status: { type: String, enum: ['ACTIVE', 'SUSPENDED'], default: 'ACTIVE' },
+  status: { type: String, enum: ['ACTIVE', 'LOCKED', 'SUSPENDED'], default: 'ACTIVE' },
   loginAttempts: { type: Number, default: 0 },
   lockUntil: { type: Date, default: null },
   lastLogin: { type: Date, default: null },
 }, { timestamps: true })
 
-export const User = mongoose.models.User || model<IUser>('User', UserSchema)
+// Explicit cast prevents union type causing "expression is not callable" on query helpers
+export const User: mongoose.Model<IUser> = (mongoose.models.User as mongoose.Model<IUser>)
+  || mongoose.model<IUser>('User', UserSchema)
